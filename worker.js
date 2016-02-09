@@ -1,7 +1,6 @@
 'use strict';
 
 self.addEventListener('install', event => {
-  self.importScripts('main.js');
   // The skipWaiting() method allows this service worker to progress from the registration's
   // waiting position to active even while service worker clients are using the registration.
   // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-global-scope-skipwaiting
@@ -16,3 +15,5 @@ self.addEventListener('activate', event => {
   // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#clients-claim-method
   event.waitUntil(self.clients.claim());
 });
+
+self.importScripts('main.js');

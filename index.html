@@ -7,7 +7,7 @@
 
       const targetOrigin = location.origin === 'https://gist.host' ? 'https://gist.run' : 'http://localhost:9000';
 
-      navigator.serviceWorker.register(`worker.js`, { scope: './' });
+      navigator.serviceWorker.register(`${location.origin}/worker.js`, { scope: './' });
 
       addEventListener('message', event => {
         if (event.origin !== targetOrigin) {
